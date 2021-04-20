@@ -45,21 +45,38 @@ import time, random, string
 flag = input("Enter 1 for case-sensitive search\nEnter 2 for non-case sensetive search\nEnter 0 for quit\n")
 while(True):
 	if flag == "1":
+		#with open("verylongstr.txt", mode="r", encoding="utf-8") as f:
+		#	for line in f:
+		#		txt = line
+
 		txt = input("Enter string:\n")
-		pat = input("Enter pattern:\n")
+		pat = input("Enter pattern:\n")#"myUniquePattern"
+
 		t = time.time()
 		kmp(pat, txt)
 		t = time.time() - t
-		print("KMP execurtion time: ", t)
+		print(f"KMP execurtion time: {t*1000} milliseconds")
+
 		t = time.time()
 		m = txt.index(pat)
 		t = time.time() - t
 		print(".index(): Found pattern at index ", m)
-		print(".index() execurtion time: ", t)
+		print(f".index() execurtion time: {t*1000} milliseconds")
+
 	elif flag == "2":
 		txt = input("Enter string:\n").lower()
 		pat = input("Enter pattern:\n").lower()
+		
+		t = time.time()
 		kmp(pat, txt)
+		t = time.time() - t
+		print(f"KMP execurtion time: {t*1000} milliseconds")
+
+		t = time.time()
+		m = txt.index(pat)
+		t = time.time() - t
+		print(".index(): Found pattern at index ", m)
+		print(f".index() execurtion time: {t*1000} milliseconds")
 
 	elif flag == "0":
 		quit()
