@@ -2,7 +2,6 @@
 class Stack():
 #пустой массив для хранения значений
 	def __init__(self):
-		print("HOBA TVOYA MAT\n")
 		self.array = []
 #метод стека – проверка на пустоту массива внутри класса
 	def empty(self):
